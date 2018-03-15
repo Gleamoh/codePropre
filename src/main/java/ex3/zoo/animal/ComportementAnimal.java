@@ -1,14 +1,21 @@
 package ex3.zoo.animal;
 
+/**
+ * @author Kevin M.
+ *
+ */
 public enum ComportementAnimal {
 	
 	HERBIVORE("Herbivore"), CARNIVORE("Carnivore"), OMNIVORE("Omnivore");
 
 
+	/**
+	 * label : String
+	 */
 	private String label;
 
 	/** Constructor
-	 * @param categorie
+	 * @param categorie - categorie
 	 */
 	private ComportementAnimal(String label) {
 		this.label = label;
@@ -16,7 +23,7 @@ public enum ComportementAnimal {
 	
 	/**
 	 * Trouver le comportement en fonction du label (on evite de faire un switch)
-	 * @param label
+	 * @param label label
 	 * @return
 	 */
 	public static ComportementAnimal findByLabel(String label) {

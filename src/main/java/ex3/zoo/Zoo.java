@@ -12,12 +12,26 @@ import ex3.zoo.zone.FermeReptileZone;
 import ex3.zoo.zone.SavaneAfricaineZone;
 import ex3.zoo.zone.Zone;
 
+/**
+ * @author Kevin M.
+ *
+ */
 public class Zoo {
 
+	/**
+	 * label : String le nom du zoo
+	 */
 	private String label;
 
+	/**
+	 * zonesList : List<Zone> la liste des zones du zoo
+	 */
 	private List<Zone> zonesList;
 
+	/**
+	 * Initialize le nom du zoo et creer les zones
+	 * @param label - Nom
+	 */
 	public Zoo(String label) {
 		this.label = label;
 		zonesList = new ArrayList<>();
@@ -27,6 +41,9 @@ public class Zoo {
 		zonesList.add(new SavaneAfricaineZone());
 	}
 
+	/**
+	 * @param animal - Ajouter un animal au zoo
+	 */
 	public void addAnimal(IAnimal animal) {
 		zonesList.stream().forEach(zone -> zone.addAnimal(animal));
 	}

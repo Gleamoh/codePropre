@@ -1,13 +1,23 @@
 package ex3.zoo.animal;
 
+/**
+ * @author Kevin M.
+ *
+ */
 public abstract class Animal implements IAnimal {
 
 	/**
-	 * label : String
+	 * label : String Nom de l'animal
 	 */
 	protected String name;
+	/**
+	 * category : String
+	 */
 	protected String category;
-	protected ComportementAnimal comportement; // HERBIVORE, CARNIVORE,
+	/**
+	 * comportement : ComportementAnimal Enumeration [HERBIVORE | CARNIVORE]
+	 */
+	protected ComportementAnimal comportement;
 
 	public Animal(String name, String category, ComportementAnimal comportement) {
 		this.name = name;
@@ -25,28 +35,48 @@ public abstract class Animal implements IAnimal {
 		return "Animal : " + name + ", catégorie: " + category + ", comportement " + comportement.toString();
 	}
 
-	public String getLabel() {
+	/**
+	 * @return the name
+	 */
+	public String getName() {
 		return name;
 	}
 
-	public void setLabel(String label) {
-		this.name = label;
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
 
+	/**
+	 * @return the category
+	 */
 	public String getCategory() {
 		return category;
 	}
 
+	/**
+	 * @param category the category to set
+	 */
 	public void setCategory(String category) {
 		this.category = category;
 	}
 
+	/**
+	 * @return the comportement
+	 */
 	public ComportementAnimal getComportement() {
 		return comportement;
 	}
 
+	/**
+	 * @param comportement the comportement to set
+	 */
 	public void setComportement(ComportementAnimal comportement) {
 		this.comportement = comportement;
 	}
+
+
 
 }

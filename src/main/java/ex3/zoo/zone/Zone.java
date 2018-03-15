@@ -6,53 +6,75 @@ import java.util.List;
 import ex3.zoo.animal.Animal;
 import ex3.zoo.animal.IAnimal;
 
+/**
+ * @author Kevin M.
+ *
+ */
 public abstract class Zone implements IZone {
 
+	/**
+	 * kiloNourritureParJour : double
+	 */
 	protected double kiloNourritureParJour;
+	/**
+	 * Label : String non de la zone
+	 */
 	protected String Label;
+	/**
+	 * animauxList : List<Animal>
+	 */
 	protected List<Animal> animauxList;
 
+	/**
+	 * Constructor
+	 * 
+	 * @param label label
+	 * @param kiloNourritureParJour kiloNourritureParJour
+	 */
 	public Zone(String label, double kiloNourritureParJour) {
 		this.kiloNourritureParJour = kiloNourritureParJour;
 		this.Label = label;
 		animauxList = new ArrayList<>();
 	}
-	
+
 	/**
 	 * Ajoute un animal la liste
-	 * @param animal
+	 * 
+	 * @param animal animal
 	 * @return vrai si l'animal est ajouté
 	 */
 	public abstract boolean addAnimal(IAnimal animal);
 
 	/**
 	 * @param kiloNourritureParJour
-	 *            the kiloNourritureParJour to set
 	 */
 	public void setKiloNourritureParJour(double kiloNourritureParJour) {
 		this.kiloNourritureParJour = kiloNourritureParJour;
 	}
-	
+
 	/**
 	 * @return double quantite de nourriture par jour
 	 */
 	public double calculerKiloNourritureParJour() {
 		return animauxList.size() * kiloNourritureParJour;
 	}
-	
-	public int compterAnimaux(){
+
+	/**
+	 * @return : int
+	 */
+	public int compterAnimaux() {
 		return animauxList.size();
 	}
 
 	/**
-	 * @return the kiloNourritureParJour
+	 * @return : double
 	 */
 	public double getKiloNourritureParJour() {
 		return kiloNourritureParJour;
 	}
 
 	/**
-	 * @return the label
+	 * @return : String
 	 */
 	public String getLabel() {
 		return Label;
@@ -60,16 +82,21 @@ public abstract class Zone implements IZone {
 
 	/**
 	 * @param label
-	 *            the label to set
 	 */
 	public void setLabel(String label) {
 		Label = label;
 	}
 
+	/**
+	 * @return : List<Animal>
+	 */
 	public List<Animal> getAnimauxList() {
 		return animauxList;
 	}
 
+	/**
+	 * @param animauxList animauxList
+	 */
 	public void setAnimauxList(List<Animal> animauxList) {
 		this.animauxList = animauxList;
 	}
